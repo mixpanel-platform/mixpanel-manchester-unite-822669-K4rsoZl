@@ -178,7 +178,9 @@
         var params = {
             params: JSON.stringify(queryParams)
         };
-        
+        console.log(params)
+        console.log(params.to_date)
+        debugger;
         MP.api.custom_query(script, params).done(function(results) {
             cqResult = results[0];
             var funnel = generateFunnel(cqResult);
@@ -434,8 +436,8 @@
     
     function main() {
         return Events({
-            from_date: params.params.from_date,
-            to_date: params.params.to_date
+            from_date: params.from_date,
+            to_date: params.to_date
         })
         .groupByUser(function(state, events) {
             // collect the funnel step and drop-off event path for each user, if they entered the funnel
