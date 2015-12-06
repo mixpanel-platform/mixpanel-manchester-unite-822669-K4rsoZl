@@ -179,6 +179,7 @@
             params: JSON.stringify(queryParams)
         };
         
+        console.log(params.params.to_date)
         MP.api.custom_query(script, params).done(function(results) {
             cqResult = results[0];
             var funnel = generateFunnel(cqResult);
